@@ -333,7 +333,7 @@ def render_header():
 def render_sidebar():
     """Render sidebar with information"""
     with st.sidebar:
-        st.image(r"demo\customer_segmentation.jpg", width=120)
+        st.image("demo/customer_segmentation.jpg", width=120)
         st.title("📊 About")
         
         st.markdown("""
