@@ -488,7 +488,7 @@ def render_overview_metrics(results_df):
     with col2:
         st.metric(
             label="Avg Customer Value",
-            value=f"£{avg_monetary:,.0f}",
+            value=f"${avg_monetary:,.0f}",
             delta=f"{(avg_monetary/total_revenue*100):.1f}% of total"
         )
     
@@ -502,7 +502,7 @@ def render_overview_metrics(results_df):
     with col4:
         st.metric(
             label="Total Revenue",
-            value=f"£{total_revenue:,.0f}",
+            value=f"${total_revenue:,.0f}",
             delta="Lifetime value"
         )
 
@@ -548,13 +548,13 @@ def render_segment_distribution(results_df):
                 colorscale='Viridis',
                 showscale=True
             ),
-            text=[f"£{val:,.0f}" for val in segment_value.values],
+            text=[f"${val:,.0f}" for val in segment_value.values],
             textposition='outside'
         )])
         
         fig.update_layout(
             title="Total Revenue by Segment",
-            xaxis_title="Total Revenue (£)",
+            xaxis_title="Total Revenue ($)",
             yaxis_title="Segment",
             height=400
         )
@@ -596,10 +596,10 @@ def render_segment_analysis(results_df):
                             .format({
                                 'Avg_Recency': '{:.0f} days',
                                 'Avg_Frequency': '{:.1f}x',
-                                'Avg_Monetary': '£{:,.0f}',
-                                'Total_Revenue': '£{:,.0f}',
+                                'Avg_Monetary': '${:,.0f}',
+                                'Total_Revenue': '${:,.0f}',
                                 'Revenue_Share_%': '{:.1f}%',
-                                'Avg_CLV': '£{:,.0f}'
+                                'Avg_CLV': '${:,.0f}'
                             }),
         use_container_width=True,
         height=300
@@ -627,7 +627,7 @@ def render_rfm_analysis(results_df):
         hovertemplate='<b>%{text}</b><br>' +
                     'Recency: %{x:.0f} days<br>' +
                     'Frequency: %{y:.0f}x<br>' +
-                    'Monetary: £%{z:,.0f}<br>' +
+                    'Monetary: $%{z:,.0f}<br>' +
                     '<extra></extra>'
     )])
     
@@ -635,7 +635,7 @@ def render_rfm_analysis(results_df):
         scene=dict(
             xaxis_title='Recency (days)',
             yaxis_title='Frequency',
-            zaxis_title='Monetary (£)',
+            zaxis_title='Monetary ($)',
             camera=dict(eye=dict(x=1.5, y=1.5, z=1.3))
         ),
         height=600,
@@ -764,7 +764,7 @@ def render_roi_calculator(results_df):
     
     with col1:
         monthly_budget = st.number_input(
-            "Monthly Marketing Budget (£)", 
+            "Monthly Marketing Budget ($)", 
             min_value=1000, 
             value=10000, 
             step=1000
@@ -785,9 +785,9 @@ def render_roi_calculator(results_df):
         potential_revenue = vip_customers * avg_vip_value * (conversion_rate/100)
         roi = (potential_revenue / monthly_budget) * 100
         
-        st.metric("Potential Revenue Increase", f"£{potential_revenue:,.0f}")
+        st.metric("Potential Revenue Increase", f"${potential_revenue:,.0f}")
         st.metric("Expected ROI", f"{roi:.1f}%")
-        st.success(f"💡 Focus on VIP segment could generate £{potential_revenue:,.0f} additional revenue")
+        st.success(f"💡 Focus on VIP segment could generate ${potential_revenue:,.0f} additional revenue")
 
 # Predictive Analytics
 def render_churn_prediction(results_df):
@@ -809,11 +809,11 @@ def render_churn_prediction(results_df):
     
     with col2:
         potential_loss = results_df[results_df['Churn_Risk'] > 70]['CLV'].sum()
-        st.metric("Potential Revenue Loss", f"£{potential_loss:,.0f}", "❌ At risk")
+        st.metric("Potential Revenue Loss", f"${potential_loss:,.0f}", "❌ At risk")
     
     with col3:
         retention_budget = potential_loss * 0.15
-        st.metric("Recommended Retention Budget", f"£{retention_budget:,.0f}", "💰 Invest")
+        st.metric("Recommended Retention Budget", f"${retention_budget:,.0f}", "💰 Invest")
     
     # Visualization
     fig = px.histogram(results_df, x='Churn_Risk', nbins=20, 

@@ -84,27 +84,17 @@ The **Customer Segmentation System** is an end-to-end machine learning solution 
 
 ## 🎬 Demo
 
-### Dashboard Preview
+<img src="demo/segmentiq1.png" alt="workflow" width="80%">
 
-```
-📊 Customer Base Overview
-├── Total Customers: 4,372
-├── Avg Customer Value: £1,889
-├── Avg Purchase Frequency: 4.8x
-└── Total Revenue: £8,260,387
-```
+<img src="demo/segmentiq2.png" alt="workflow" width="80%">
 
-### Segment Distribution
+<img src="demo/segmentiq3.png" alt="workflow" width="80%">
 
-| Segment                | Count | Avg Monetary | Revenue Share | Strategy           |
-| ---------------------- | ----- | ------------ | ------------- | ------------------ |
-| 🌟 VIP Champions       | 873   | £12,040      | 42%           | Retention & Reward |
-| ✨ Potential Loyalists | 1,246 | £2,890       | 28%           | Development        |
-| 📊 Average Customers   | 1,098 | £1,700       | 18%           | Activation         |
-| ⚠️ At Risk             | 789   | £374         | 8%            | Re-engagement      |
-| ❌ Lost/Hibernating    | 366   | £170         | 4%            | Last Resort        |
+<img src="demo/segmentiq4.png" alt="workflow" width="80%">
 
----
+<img src="demo/segmentiq5.png" alt="workflow" width="80%">
+
+<img src="demo/segmentiq6.png" alt="workflow" width="80%">
 
 ## 🏗️ Architecture
 
@@ -289,10 +279,6 @@ customer-segmentation-system/
 │
 ├── 📂 data/                         # Data directory
 │   └── Online+Retail.zip           # Sample dataset
-│
-├── 📂 demo/                         # Demo assets
-│   └── customer_segments.png   # Demo image
-|   ├── customer_segmentation.jpg
 │
 ├── 📄 app.py                        # Streamlit web application
 ├── 📄 run_pipeline.py               # Run the training pipeline
