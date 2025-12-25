@@ -115,7 +115,7 @@ SEGMENT_STRATEGIES = {
         'description': 'Your most valuable customers - shop frequently and spend a lot',
         'characteristics': [
             '✅ Very high purchase rate (14+ times)',
-            '✅ High spending value (£9,000+)',
+            '✅ High spending value ($9,000+)',
             '✅ Last recent purchase (< 20 days)',
             '✅ High brand loyalty'
         ],
@@ -138,7 +138,7 @@ SEGMENT_STRATEGIES = {
         'description': 'Regular customers with the possibility of being upgraded to VIP',
         'characteristics': [
             '✅ Good purchase rate (4-5 times)',
-            '✅ Average spending value (£2,000)',
+            '✅ Average spending value ($2,000)',
             '✅ Recent activity (< 35 days)',
             '✅ High growth potential'
         ],
@@ -161,7 +161,7 @@ SEGMENT_STRATEGIES = {
         'description': 'Average customers need growth incentives',
         'characteristics': [
             '⚡ Low purchase rate (2-3 times)',
-            '⚡ Average spending value (£1,700)',
+            '⚡ Average spending value ($1,700)',
             '⚡ Last average purchase (85 days)',
             '⚡ They need to activate'
         ],
@@ -184,7 +184,7 @@ SEGMENT_STRATEGIES = {
         'description': 'Customers showing signs of disinterest',
         'characteristics': [
             '⚠️ Very low purchase rate (1-2 times)',
-            '⚠️ Low spending value (£374)',
+            '⚠️ Low spending value ($374)',
             '⚠️ Last old purchase (145 days ago)',
             '⚠️ The risk of losing them is high.'
         ],
@@ -207,7 +207,7 @@ SEGMENT_STRATEGIES = {
         'description': 'Inactive customers - about to be lost',
         'characteristics': [
             '❌ Very low purchase rate (1 time)',
-            '❌ Low spending value (£170)',
+            '❌ Low spending value ($170)',
             '❌ Last purchase is very old (163+ days)',
             '❌ Low probability of return'
         ],
@@ -448,7 +448,7 @@ def render_upload_section(app):
     
     with col1:
         uploaded_file = st.file_uploader(
-            "Choose a CSV or Excel file",
+            "Choose a `CSV` or `Excel` or `ZIP` or `SQL Database` file",
             type=['csv', 'xlsx', 'xls', 'zip', 'db'],
             help="Upload your customer data file with required columns"
         )
@@ -465,7 +465,6 @@ def render_upload_section(app):
         """)
     
     return uploaded_file
-
 
 def render_overview_metrics(results_df):
     """Render overview metrics"""
@@ -933,7 +932,7 @@ def main():
                 st.error(f"❌ Validation Error: {message}")
                 st.stop()
             
-            st.success(f"✅ File uploaded successfully! {len(df)} customers detected.")
+            st.success(f"✅ File uploaded successfully! {len(df)} records detected.")
             
             # Process data
             with st.spinner("🔄 Processing data and generating insights..."):
