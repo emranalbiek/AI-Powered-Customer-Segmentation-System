@@ -168,7 +168,7 @@ The **Customer Segmentation System** is an end-to-end machine learning solution 
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/RedDragon30/AI-Powered-Customer-Segmentation-System.git
+git clone https://github.com/emranalbiek/AI-Powered-Customer-Segmentation-System.git
 cd customer-segmentation-system
 ```
 
@@ -452,7 +452,7 @@ This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENS
 ML Engineer | Data Analyst
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](http://linkedin.com/in/emranalbeik)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/RedDragon30)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/emranalbiek)
 [![Email](https://img.shields.io/badge/Email-Contact-red)](mailto:emranalbiek@gmail.com)
 [![Portfolio](https://img.shields.io/badge/Portfolio-Visit-green)](https://emranalbeik.odoo.com/)
 
